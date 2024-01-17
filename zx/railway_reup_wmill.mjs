@@ -8,7 +8,9 @@ await spinner("reupping wmill services...", async () => {
     "lsp",
   ];
   try {
-    const res = Promise.all(services.map((s) => $`railway up --service ${s}`));
+    const res = await Promise.all(
+      services.map((s) => $`railway up --service ${s}`),
+    );
     res.forEach((r) => console.log(r.toString()));
     console.log(chalk.bgGreen.black(`${s} :: SUCCESS `));
   } catch (e) {
