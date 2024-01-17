@@ -1,0 +1,1 @@
+await $`railway whoami`;
